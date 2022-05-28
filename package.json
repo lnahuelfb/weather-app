@@ -18,6 +18,8 @@
     "vite": "^2.9.9"
   },
   "eslintConfig": {
-    "extends": "standard"
+    "extends": [
+      "standard"
+    ]
   }
 }
