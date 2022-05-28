@@ -1,6 +1,6 @@
 :root {
   --font-color-primary: #fff;
   --font-color-secondary: #000;
-  --blur: 2rem;
+  --blur: blur(10px);
   --padding: 0 2rem;
 }

@@ -11,4 +11,26 @@
   background-repeat: no-repeat;
 }
 
+.AppRainy {
+  height: 100vh;
+  background-image: url(./images/dia-lluvioso.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
+.AppCloudy {
+  height: 100vh;
+  background-image: url(./images/dia-nublado.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.AppSnowy {
+  height: 100vh;
+  background-image: url(./images/dia-nevado.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
