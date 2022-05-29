@@ -1,6 +1,12 @@
 .App {
   text-align: center;
-  font-size: 2.4rem
+  font-size: 2.4rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./images/dia-lluvioso.jpg);
 }
 
 .AppSunny {
@@ -34,3 +40,23 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.loadingImage {
+  width: 200px;
+  animation: rotation 5s infinite linear;
+}
+
+.textLoading {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+  
