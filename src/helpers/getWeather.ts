@@ -1,4 +1,4 @@
-export const getWeather = async (setIsLoading, setError, setWeather) => {
+export const getWeather = async (setIsLoading: Function, setError: Function, setWeather: Function) => {
   setIsLoading(true);
   setError(null);
 

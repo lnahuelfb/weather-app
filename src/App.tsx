@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import { WeatherContext } from './context/weatherContext.jsx'
+import { WeatherContext } from './context/weatherContext'
 
-import { Header } from './components/Header.jsx'
-import { WeatherCard } from './components/WeatherCard.jsx'
+import { Header } from './components/header'
+import { WeatherCard } from './components/WeatherCard'
 
 import sun from './images/sun.svg'
 

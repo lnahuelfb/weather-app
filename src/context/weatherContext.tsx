@@ -1,10 +1,11 @@
-import React, {createContext, useState, useEffect} from "react";
+import {createContext, useState, useEffect} from "react";
 import { getWeather } from "../helpers/getWeather";
+import { children, weather} from "../interfaces/interfaces";
 
-export const WeatherContext = createContext();
+export const WeatherContext = createContext<any| weather | null>(null);
 
-function WeatherContextProvider({ children }) {
-  const [weather, setWeather] = useState({
+function WeatherContextProvider({ children }: children ) {
+  const [weather, setWeather] = useState<weather>({
     city: "",
     temperature: '',
     weather: '',
@@ -20,14 +21,15 @@ function WeatherContextProvider({ children }) {
   }, []);
 
   return (
-    <WeatherContext.Provider value={{
+    <WeatherContext.Provider value= {{
       weather,
       isLoading,
       error,
       setWeather,
       setIsLoading,
-      setError
-    }}>
+      setError,
+  }
+}>
       {children}
     </WeatherContext.Provider>
   )

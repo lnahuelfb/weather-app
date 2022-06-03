@@ -25,9 +25,10 @@
 }
 
 .text{
+  display: flex;
   width: var(--width);
   padding: var(--padding);
-  text-align: start;
+  justify-content: space-around;
   font-size: var(--font-size);
   color: white;
 }
@@ -36,4 +37,13 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.dataImage {
+  height: 5rem;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
 }

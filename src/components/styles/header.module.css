@@ -20,8 +20,6 @@
 }
 
 .item {
-  text-decoration: none;
-  list-style: none;
   color: var(--font-color-primary);
   font-size: 2rem;
   font-weight: bold;
