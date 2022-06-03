@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
-import { WeatherContext } from '../../context/weatherContext'
-import styles from './header.module.css'
+import { WeatherContext } from '../context/weatherContext'
+import styles from './styles/header.module.css'
 
 export const Header = () => {
 

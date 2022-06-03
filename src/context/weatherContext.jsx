@@ -1,5 +1,5 @@
-import { getWeather } from "../helpers/getWeather";
 import React, {createContext, useState, useEffect} from "react";
+import { getWeather } from "../helpers/getWeather";
 
 export const WeatherContext = createContext();
 

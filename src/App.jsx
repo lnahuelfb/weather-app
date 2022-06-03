@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { WeatherContext } from './context/weatherContext.jsx'
 
-import { Header } from './components/header/Header.jsx'
+import { Header } from './components/Header.jsx'
+import { WeatherCard } from './components/WeatherCard.jsx'
 
 import sun from './images/sun.svg'
 
@@ -13,7 +14,7 @@ function App() {
   if (isLoading) {
     return (
       <div className={styles.App}>
-        <img src={sun} alt="Cargando..." className={styles.loadingImage}/>
+        <img src={sun} alt="Cargando..." className={styles.loadingImage} />
         <h1 className={styles.textLoading}>Loading...</h1>
       </div>
     )
@@ -23,7 +24,7 @@ function App() {
     return (
       <div className={styles.AppRainy}>
         <Header />
-        <h1>It's rainy!</h1>
+        <WeatherCard/>
       </div>
     )
   }
@@ -32,7 +33,7 @@ function App() {
     return (
       <div className={styles.AppCloudy}>
         <Header />
-        <h1>It's cloudy!</h1>
+        <WeatherCard/>
       </div>
     )
   }
@@ -41,16 +42,16 @@ function App() {
     return (
       <div className={styles.AppSnowy}>
         <Header />
-        <h1>It's snowy!</h1>
+        <WeatherCard/>
       </div>
     )
   }
 
   return (
-      <div className={styles.AppSunny}>
-        <Header />
-        <h1>It's sunny!</h1>
-      </div>
+    <div className={styles.AppSunny}>
+      <Header />
+      <WeatherCard/>
+    </div>
   )
 }
 
