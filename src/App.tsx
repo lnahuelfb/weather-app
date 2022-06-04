@@ -9,7 +9,7 @@ import sun from './images/sun.svg'
 import styles from './App.module.css'
 
 function App() {
-  const { weather, isLoading } = useContext(WeatherContext)
+  const { data, isLoading } = useContext(WeatherContext)
 
   if (isLoading) {
     return (
@@ -20,7 +20,7 @@ function App() {
     )
   }
 
-  if (weather.weather === 'rainy') {
+  if (data.weather === 'rainy') {
     return (
       <div className={styles.AppRainy}>
         <Header />
@@ -29,7 +29,7 @@ function App() {
     )
   }
 
-  if (weather.weather === 'cloudy') {
+  if (data.weather === 'cloudy') {
     return (
       <div className={styles.AppCloudy}>
         <Header />
@@ -38,7 +38,7 @@ function App() {
     )
   }
 
-  if (weather.weather === 'snowy') {
+  if (data.weather === 'snowy') {
     return (
       <div className={styles.AppSnowy}>
         <Header />

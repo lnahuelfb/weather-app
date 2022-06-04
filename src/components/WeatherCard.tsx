@@ -1,18 +1,23 @@
-import {useContext} from 'react'
+import { useContext } from 'react'
 import { WeatherContext } from '../context/weatherContext'
 
 import styles from './styles/WeatherCard.module.css'
 
-import rain from '../images/rain.svg'
 import temperature from '../images/termometro.svg'
 import humidity from '../images/humidity.svg'
 import wind from '../images/wind.svg'
 
+import rain from '../images/rain.svg'
+import cloudy from '../images/cloudy-icon.svg'
+import snowy from '../images/snowy-icon.svg'
+import sunny from '../images/sunny-icon.svg'
+
 export const WeatherCard = () => {
 
-  const { weather } = useContext(WeatherContext)
+  const { data } = useContext(WeatherContext)
 
-  let weatherCapitalize = weather.weather;
+  let weatherCapitalize = data.weather;
+
   weatherCapitalize = weatherCapitalize.charAt(0).toUpperCase() + weatherCapitalize.slice(1);
 
   return (
@@ -21,23 +26,38 @@ export const WeatherCard = () => {
         <h2>{weatherCapitalize}</h2>
         <figure className={styles.imageContainer}>
           {
-            weather.weather === 'rainy'
+            data.weather === 'rainy'
               ? <img src={rain} alt="Lloviendo" className={styles.image} />
+              : null
+          }
+          {
+            data.weather === 'cloudy'
+              ? <img src={cloudy} alt="Nublado" className={styles.image} />
+              : null
+          }
+          {
+            data.weather === 'snowy'
+              ? <img src={snowy} alt="Nublado" className={styles.image} />
+              : null
+          }
+          {
+            data.weather === 'sunny'
+              ? <img src={sunny} alt="Temperatura" className={styles.image} />
               : null
           }
         </figure>
         <ul className={styles.text}>
           <li>
-              <img src={temperature} alt="Temperatura" className={styles.dataImage} />
-            {weather.temperature}
+            <img src={temperature} alt="Temperatura" className={styles.dataImage} />
+            {data.temperature}
           </li>
           <li>
-            <img src={humidity} alt="Humedad" className={styles.dataImage}/>
-            {weather.humidity}
+            <img src={humidity} alt="Humedad" className={styles.dataImage} />
+            {data.humidity}
           </li>
           <li>
-            <img src={wind} alt="Viento" className={styles.dataImage}/>
-            {weather.wind}
+            <img src={wind} alt="Viento" className={styles.dataImage} />
+            {data.wind}
           </li>
         </ul>
       </article>

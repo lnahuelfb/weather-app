@@ -5,7 +5,7 @@ import { children, weather} from "../interfaces/interfaces";
 export const WeatherContext = createContext<any| weather | null>(null);
 
 function WeatherContextProvider({ children }: children ) {
-  const [weather, setWeather] = useState<weather>({
+  const [data, setData] = useState<weather>({
     city: "",
     temperature: '',
     weather: '',
@@ -17,15 +17,15 @@ function WeatherContextProvider({ children }: children ) {
   const [error, setError] = useState(null);
    
   useEffect(() => {
-    getWeather(setIsLoading, setError, setWeather);
+    getWeather(setIsLoading, setError, setData);
   }, []);
 
   return (
     <WeatherContext.Provider value= {{
-      weather,
+      data,
       isLoading,
       error,
-      setWeather,
+      setData,
       setIsLoading,
       setError,
   }

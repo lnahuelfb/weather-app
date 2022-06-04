@@ -5,7 +5,7 @@ import styles from './styles/header.module.css'
 
 export const Header = () => {
 
-  const { weather } = useContext(WeatherContext)
+  const { data } = useContext(WeatherContext)
 
   return (
     <header className={styles.header}>
@@ -17,7 +17,7 @@ export const Header = () => {
             </svg>
           </li>
           <li className={styles.item}>
-            {weather.city}
+            {data.city}
           </li>
           <li className={styles.item}>
             <svg
