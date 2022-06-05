@@ -9,7 +9,10 @@ export const getWeather = async (setIsLoading: Function, setError: Function, set
     setWeather({
       city: data.city,
       temperature: data.temperature,
-      weather: data.weather.toLowerCase(),
+      feelsLike: data.feelsLike,
+      tempMin: data.tempMin,
+      tempMax: data.tempMax,
+      weather: data.weather,
       humidity: data.humidity,
       wind: data.wind,
     });

@@ -10,25 +10,27 @@ import Loading from './pages/loading'
 function App() {
   const { data, isLoading } = useContext(WeatherContext)
 
+  const weather = data.weather.toLowerCase()
+
   if (isLoading) {
     return (
       <Loading/>
     )
   }
 
-  if (data.weather === 'rainy') {
+  if (weather === 'rainy') {
     return (
       <Rainy/>
     )
   }
 
-  if (data.weather === 'cloudy') {
+  if (weather === 'cloudy') {
     return (
       <Cloudy/>
     )
   }
 
-  if (data.weather === 'snowy') {
+  if (weather === 'snowy') {
     return (
       <Snowy/>
     )

@@ -15,33 +15,30 @@ import sunny from '../images/sunny-icon.svg'
 const WeatherCard = () => {
 
   const { data } = useContext(WeatherContext)
-
-  let weatherCapitalize = data.weather;
-
-  weatherCapitalize = weatherCapitalize.charAt(0).toUpperCase() + weatherCapitalize.slice(1);
+  const weather = data.weather.toLowerCase()
 
   return (
     <main className={styles.container}>
       <article className={styles.card}>
-        <h2>{weatherCapitalize}</h2>
+        <h2>{data.weather}</h2>
         <figure className={styles.imageContainer}>
           {
-            data.weather === 'rainy'
+            weather === 'rainy'
               ? <img src={rain} alt="Lloviendo" className={styles.image} />
               : null
           }
           {
-            data.weather === 'cloudy'
+            weather === 'cloudy'
               ? <img src={cloudy} alt="Nublado" className={styles.image} />
               : null
           }
           {
-            data.weather === 'snowy'
+            weather === 'snowy'
               ? <img src={snowy} alt="Nublado" className={styles.image} />
               : null
           }
           {
-            data.weather === 'sunny'
+            weather === 'sunny'
               ? <img src={sunny} alt="Temperatura" className={styles.image} />
               : null
           }

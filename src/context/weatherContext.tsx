@@ -8,6 +8,9 @@ function WeatherContextProvider({ children }: children ) {
   const [data, setData] = useState<weather>({
     city: "",
     temperature: '',
+    feelsLike: '',
+    tempMin: '',
+    tempMax: '',
     weather: '',
     humidity: '',
     wind: '',
