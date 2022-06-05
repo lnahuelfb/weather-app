@@ -1,57 +1,41 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { WeatherContext } from './context/weatherContext'
 
-import { Header } from './components/header'
-import { WeatherCard } from './components/WeatherCard'
-
-import sun from './images/sun.svg'
-
-import styles from './App.module.css'
+import Rainy from './pages/rainy'
+import Sunny from './pages/sunny'
+import Snowy from './pages/snowy'
+import Cloudy from './pages/cloudy'
+import Loading from './pages/loading'
 
 function App() {
   const { data, isLoading } = useContext(WeatherContext)
 
   if (isLoading) {
     return (
-      <div className={styles.App}>
-        <img src={sun} alt="Cargando..." className={styles.loadingImage} />
-        <h1 className={styles.textLoading}>Loading...</h1>
-      </div>
+      <Loading/>
     )
   }
 
   if (data.weather === 'rainy') {
     return (
-      <div className={styles.AppRainy}>
-        <Header />
-        <WeatherCard/>
-      </div>
+      <Rainy/>
     )
   }
 
   if (data.weather === 'cloudy') {
     return (
-      <div className={styles.AppCloudy}>
-        <Header />
-        <WeatherCard/>
-      </div>
+      <Cloudy/>
     )
   }
 
   if (data.weather === 'snowy') {
     return (
-      <div className={styles.AppSnowy}>
-        <Header />
-        <WeatherCard/>
-      </div>
+      <Snowy/>
     )
   }
 
   return (
-    <div className={styles.AppSunny}>
-      <Header />
-      <WeatherCard/>
-    </div>
+    <Sunny/>
   )
 }
 

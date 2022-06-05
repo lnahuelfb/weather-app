@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { WeatherContext } from '../context/weatherContext'
 import styles from './styles/header.module.css'
 
-export const Header = () => {
+const Header = () => {
 
   const { data } = useContext(WeatherContext)
 
@@ -36,3 +36,5 @@ export const Header = () => {
     </header>
   )
 }
+
+export default Header

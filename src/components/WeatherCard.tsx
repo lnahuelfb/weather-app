@@ -12,7 +12,7 @@ import cloudy from '../images/cloudy-icon.svg'
 import snowy from '../images/snowy-icon.svg'
 import sunny from '../images/sunny-icon.svg'
 
-export const WeatherCard = () => {
+const WeatherCard = () => {
 
   const { data } = useContext(WeatherContext)
 
@@ -64,3 +64,6 @@ export const WeatherCard = () => {
     </main>
   )
 }
+
+
+export default WeatherCard
