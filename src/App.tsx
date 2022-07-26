@@ -8,7 +8,7 @@ import Cloudy from './pages/cloudy'
 import Loading from './pages/loading'
 
 function App() {
-  const { data, isLoading } = useContext(WeatherContext)
+  const { data, error, isLoading } = useContext(WeatherContext)
 
   const weather = data.weather.toLowerCase()
 
@@ -33,6 +33,15 @@ function App() {
   if (weather === 'snowy') {
     return (
       <Snowy/>
+    )
+  }
+
+  if(error) {
+
+    return (
+      <>
+        <h1>{error.message}</h1>
+      </>
     )
   }
 

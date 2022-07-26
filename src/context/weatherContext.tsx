@@ -1,6 +1,6 @@
 import {createContext, useState, useEffect} from "react";
 import { getWeather } from "../helpers/getWeather";
-import { children, weather} from "../interfaces/interfaces";
+import { children, weather, error} from "../interfaces/interfaces";
 
 export const WeatherContext = createContext<any| weather | null>(null);
 
@@ -17,7 +17,7 @@ function WeatherContextProvider({ children }: children ) {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<error|null>(null);
    
   useEffect(() => {
     getWeather(setIsLoading, setError, setData);

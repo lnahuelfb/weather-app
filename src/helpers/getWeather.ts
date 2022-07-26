@@ -17,8 +17,8 @@ export const getWeather = async (setIsLoading: Function, setError: Function, set
       wind: data.wind,
     });
 
-  } catch (err) {
-    setError(err);
+  } catch (error) {
+    setError(error);
   }
   
   setIsLoading(false);

@@ -20,6 +20,9 @@
 }
 
 .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--font-color-primary);
   font-size: 2rem;
   font-weight: bold;

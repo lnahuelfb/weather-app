@@ -43,21 +43,22 @@ const WeatherCard = () => {
               : null
           }
         </figure>
+        <h1 className={styles.temperature}>{data.temperature}</h1>
+      </article>
         <ul className={styles.text}>
           <li>
             <img src={temperature} alt="Temperatura" className={styles.dataImage} />
-            {data.temperature}
+            <p className={styles.data}>{data.feelsLike}</p>
           </li>
           <li>
             <img src={humidity} alt="Humedad" className={styles.dataImage} />
-            {data.humidity}
+            <p className={styles.data}>{data.humidity}</p>
           </li>
           <li>
             <img src={wind} alt="Viento" className={styles.dataImage} />
-            {data.wind}
+            <p className={styles.data}>{data.wind}</p>
           </li>
         </ul>
-      </article>
     </main>
   )
 }

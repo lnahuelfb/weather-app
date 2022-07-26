@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin: 2rem;
   color: white;
 }
@@ -15,9 +16,15 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 20px;
   background-color: #ffffff13;
   backdrop-filter: var(--blur);
   border-radius: 40px;
+}
+
+.temperature {
+  font-size: 5rem;
+  margin: 20px 0;
 }
 
 .imageContainer {
@@ -26,11 +33,14 @@
 
 .text{
   display: flex;
+  padding: 20px;
   width: var(--width);
-  padding: var(--padding);
   justify-content: space-around;
   font-size: var(--font-size);
   color: white;
+  background-color: #ffffff13;
+  backdrop-filter: var(--blur);
+  border-radius: 40px;
 }
 
 .image {
@@ -46,4 +56,9 @@
 li {
   display: flex;
   flex-direction: column;
+  width: 50px;
+}
+
+.data {
+  font-weight: bold;
 }

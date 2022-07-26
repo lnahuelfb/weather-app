@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface weather {
   city: string;
   temperature: string;
@@ -9,6 +7,11 @@ export interface weather {
   tempMax: string;
   humidity: string;
   wind: string;
+}
+
+export interface error {
+  message?: string;
+  status?: number;
 }
 
 export interface children {
