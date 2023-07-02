@@ -10,34 +10,33 @@ import Loading from './pages/loading'
 function App() {
   const { data, error, isLoading } = useContext(WeatherContext)
 
-  const weather = data.weather.toLowerCase()
+  const weather = data?.weather.toLowerCase()
 
   if (isLoading) {
     return (
-      <Loading/>
+      <Loading />
     )
   }
 
   if (weather === 'rainy') {
     return (
-      <Rainy/>
+      <Rainy />
     )
   }
 
   if (weather === 'cloudy') {
     return (
-      <Cloudy/>
+      <Cloudy />
     )
   }
 
   if (weather === 'snowy') {
     return (
-      <Snowy/>
+      <Snowy />
     )
   }
 
-  if(error) {
-
+  if (error) {
     return (
       <>
         <h1>{error.message}</h1>
@@ -46,7 +45,7 @@ function App() {
   }
 
   return (
-    <Sunny/>
+    <Sunny />
   )
 }
 

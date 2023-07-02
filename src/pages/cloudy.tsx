@@ -6,8 +6,8 @@ import styles from './styles/App.module.css'
 const Cloudy = () => {
   return (
     <div className={styles.AppCloudy}>
-    <Header />
-    <WeatherCard/>
+      <Header />
+      <WeatherCard />
     </div>
   )
 }
