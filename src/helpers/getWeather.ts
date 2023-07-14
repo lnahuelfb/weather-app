@@ -3,23 +3,39 @@ export const getWeather = async (setIsLoading: Function, setError: Function, set
   setError(null);
 
   try {
-    const response = await fetch(`http://localhost:3001/weather`);
-    const data = await response.json();
+    const response = await fetch('http://localhost:3000/weather')
+
+    console.log(response)
+
+    if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
+
+    const {
+      city,
+      temperature,
+      feelsLike,
+      tempMin,
+      tempMax,
+      weather,
+      humidity,
+      wind
+    } = await response.json();
 
     setWeather({
-      city: data.city,
-      temperature: data.temperature,
-      feelsLike: data.feelsLike,
-      tempMin: data.tempMin,
-      tempMax: data.tempMax,
-      weather: data.weather,
-      humidity: data.humidity,
-      wind: data.wind,
+      city,
+      temperature,
+      feelsLike,
+      tempMin,
+      tempMax,
+      weather,
+      humidity,
+      wind,
     });
+
+    console.log(city)
 
   } catch (error) {
     setError(error);
   }
-  
+
   setIsLoading(false);
 }

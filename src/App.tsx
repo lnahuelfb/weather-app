@@ -12,27 +12,25 @@ function App() {
 
   const weather = data?.weather.toLowerCase()
 
+  console.log(data)
+
+  const app = [{
+    weather: 'rainy',
+    component: <Rainy />
+  }, {
+    weather: 'cloudy',
+    component: <Cloudy />
+  }, {
+    weather: 'snowy',
+    component: <Snowy />
+  }, {
+    weather: 'sunny',
+    component: <Sunny />
+  }]
+
   if (isLoading) {
     return (
       <Loading />
-    )
-  }
-
-  if (weather === 'rainy') {
-    return (
-      <Rainy />
-    )
-  }
-
-  if (weather === 'cloudy') {
-    return (
-      <Cloudy />
-    )
-  }
-
-  if (weather === 'snowy') {
-    return (
-      <Snowy />
     )
   }
 
@@ -44,9 +42,12 @@ function App() {
     )
   }
 
-  return (
-    <Sunny />
-  )
+  const clima = app.filter((data) => data.weather === weather)
+
+  console.log(clima[0])
+  console.log(weather);
+
+  return (clima[0].component)
 }
 
 export default App
