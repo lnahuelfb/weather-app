@@ -20,7 +20,7 @@ function WeatherContextProvider({ children }: children) {
   const [error, setError] = useState<error | null>(null);
 
   useEffect(() => {
-    getWeather(setIsLoading, setError, setData);
+    getWeather(setIsLoading, setError, setData)
   }, []);
 
   return (

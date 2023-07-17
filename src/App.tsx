@@ -14,20 +14,6 @@ function App() {
 
   console.log(data)
 
-  const app = [{
-    weather: 'rainy',
-    component: <Rainy />
-  }, {
-    weather: 'cloudy',
-    component: <Cloudy />
-  }, {
-    weather: 'snowy',
-    component: <Snowy />
-  }, {
-    weather: 'sunny',
-    component: <Sunny />
-  }]
-
   if (isLoading) {
     return (
       <Loading />
@@ -42,12 +28,16 @@ function App() {
     )
   }
 
-  const clima = app.filter((data) => data.weather === weather)
-
-  console.log(clima[0])
-  console.log(weather);
-
-  return (clima[0].component)
+  switch (weather) {
+    case 'rainy':
+      return (<Rainy />)
+    case 'cloudy':
+      return (<Cloudy />)
+    case 'sunny':
+      return (<Sunny />)
+    default:
+      return (<Snowy />)
+  }
 }
 
 export default App
