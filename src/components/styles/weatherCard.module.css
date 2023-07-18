@@ -17,7 +17,7 @@
   align-items: center;
   flex-direction: column;
   margin: 20px;
-  background-color: #ffffff13;
+  background-color: #00000013;
   backdrop-filter: var(--blur);
   border-radius: 40px;
 }
@@ -31,14 +31,14 @@
   height: 40%;
 }
 
-.text{
+.text {
   display: flex;
   padding: 20px;
   width: var(--width);
   justify-content: space-around;
   font-size: var(--font-size);
   color: white;
-  background-color: #ffffff13;
+  background-color: #00000013;
   backdrop-filter: var(--blur);
   border-radius: 40px;
 }
